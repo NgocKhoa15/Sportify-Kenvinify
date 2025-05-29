@@ -63,3 +63,111 @@ header .container .logo h1 {
     }
 }
 
+main{
+    margin-top: 30px;
+}
+
+main .container .search-section .search-container{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-container i{
+    position: absolute;
+    font-size: 18px;
+    left: 6px;
+    top: 35%;   
+    transform: translate(-50,-50%);
+    margin-left: 12px;
+    transition: all 0.7s;
+}
+
+.search-section input{
+   flex: 1;
+   padding: 18px 25px;
+   outline: none;
+   border: none;
+   border-radius: 30px;
+   background-color: rgba(255, 255, 255, 0.2);
+   font-size: 17px;
+   color: white;
+   padding-left: 45px;
+}
+
+.search-section:focus-within{
+    border-color: #7877c6;
+    transform: translateY(-7px);
+}
+
+.search-section:focus-within input{
+    border: 1.5px solid #7877c6;
+    box-shadow: 0 0 30px rgba(120, 119, 198, 0.5), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+input::placeholder {
+    color: aliceblue;
+    opacity: 0.65;
+}
+
+/* ---------------------------Card-section------------------------------ */
+main .section-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .card-section {
+    margin-top: 50px;
+}
+
+main .section-header h2{
+    font-size: 35px;
+}
+
+main .track-section{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    
+}
+
+main .track-section .track-card{
+    border: 1px solid #4b48d2;
+    width: calc(100%/3 -20pxx);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin: 0 30px;
+}
+
+main .track-section .track-card .track-card-container{
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+main .track-section .track-card img{
+    width: 100%;
+    height: 250px;
+    border-radius: 25px;
+}
+
+main .track-section .track-card h3{
+    margin: 10px 0;
+    font-weight: bold;
+
+}
+
+main .track-section .track-card p{
+    opacity: 0.8;
+}
+
+
