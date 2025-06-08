@@ -132,12 +132,11 @@ main .track-section{
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 45px;
-    
 }
 
 main .track-section .track-card{
     border: 1px solid #4b48d2;
-    width: calc(100%/3 -20pxx);
+    width: calc(100%/3 - 20px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,13 +144,13 @@ main .track-section .track-card{
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    margin: 0 30px;
 }
 
 main .track-section .track-card .track-card-container{
     max-width: 450px;
     margin: 0 auto;
     padding: 30px;
+    cursor: pointer;
 }
 
 main .track-section .track-card img{
