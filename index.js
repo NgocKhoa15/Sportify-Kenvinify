@@ -6,8 +6,34 @@ document.addEventListener("DOMContentLoaded", function(){
 async function initialApp(){
     accessToken = await getSpotifyToken();
     if(accessToken){
-        getPopularTrack();
+      const response = await getPopularTrack();
+      displayTrack(response.tracks.items);
     }
+}
+
+function displayTrack(data){
+  console.log(data);
+  data.forEach((item) => {
+    // console.log(item);
+    const imageUrl = item.album.images[0].url;
+    const name = item.name;
+    const artistName = item.artists.map(item => item.name).join(", ");
+    console.log(artistName);
+  // tạo ra thẻ div
+    const element = document.createElement("div");
+  // gắn class cho thẻ div đó
+    element.className = "track-card";
+  // gắn nội dung cho thẻ div đó
+    element.innerHTML = `<div class="track-card-container">
+    <img src= "${imageUrl}" 
+                alt="">
+    <h3> ${name} </h3>
+    <p> ${artistName} </p>
+    </div>`;
+  // gắn thẻ div đó vào track-section
+    const trackSection = document.getElementById("track-section");
+    trackSection.appendChild(element);
+  });
 }
 
 async function getPopularTrack(){
@@ -24,7 +50,7 @@ async function getPopularTrack(){
         });
 
         console.log(response);
-        
+        return response.data;
     } catch (error) {
         
         console.log(error);
