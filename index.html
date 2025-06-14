@@ -47,7 +47,7 @@
             <input placeholder="Tìm kiếm bài hát, nghệ sĩ, album,..." type="text">
            </div>
         </section>
-
+            
         <!-- Card section -->
          <section class="card-section">
             <div class="section-header">
@@ -56,6 +56,7 @@
                 Open Playlist
                 </button>
             </div>
+           
             <div id="track-section" class="track-section">
                 <!-- <div class="track-card">
                     <div class="track-card-container">
@@ -87,9 +88,24 @@
             </div>  -->
                     
         </div>
+        
+
          </section>
         </div>
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-header">
+            <h2 id="modal-name">Tên bài hát </h2>
+            <i onclick="handleClose()" class="fa-solid fa-close"></i>
+        </div>
+         <iframe id="iframe" title="Spotify Embed: Recommendation Playlist "
+        src="https://open.spotify.com/embed/track/3Y2X5eIL9N5C0gu9Q2iB4w?utm_source=generator&theme=0" width="100%"
+        height="100%" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.9.0/axios.min.js" 
     integrity="sha512-FPlUpimug7gt7Hn7swE8N2pHw/+oQMq/+R/hH/2hZ43VOQ+Kjh25rQzuLyPz7aUWKlRpI7wXbY6+U3oFPGjPOA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

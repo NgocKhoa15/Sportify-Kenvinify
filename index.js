@@ -12,9 +12,9 @@ async function initialApp(){
 }
 
 function displayTrack(data){
-  console.log(data);
   data.forEach((item) => {
-    // console.log(item);
+    console.log(data);
+    // console.log(item.id);
     const imageUrl = item.album.images[0].url;
     const name = item.name;
     const artistName = item.artists.map(item => item.name).join(", ");
@@ -28,14 +28,42 @@ function displayTrack(data){
     <img src= "${imageUrl}" 
                 alt="">
     <h3> ${name} </h3>
-    <p> ${artistName} </p>
+    <p> ${truncateText(artistName, 25)} </p>
     </div>`;
+
+    // Thêm event listener để phát nhạc
+    element.addEventListener("click", () => {
+      playTrack(item.id,name,artistName);
+    })
+
   // gắn thẻ div đó vào track-section
     const trackSection = document.getElementById("track-section");
     trackSection.appendChild(element);
   });
 }
 
+function playTrack(id, name, artistName){
+  const iframe = document.getElementById("iframe");
+  iframe.src = `https://open.spotify.com/embed/track/${id}?utm_source=generator&theme=0`
+  
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
+
+  const modalName = document.getElementById("modal-name");
+  modalName.innerHTML = name;
+
+}
+
+function handleClose(){
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+  ////////////
+  iframe.src = "";
+}
+
+function truncateText(text, number){
+  return text.length > number ? text.slice(0,25) + "..." : text;
+}
 async function getPopularTrack(){
     try {
         const response = await axios.get("https://api.spotify.com/v1/search", {
@@ -78,3 +106,4 @@ async function getSpotifyToken() {
     return null;
   }
 }
+
